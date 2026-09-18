@@ -44,9 +44,27 @@ app = marimo.App(width="medium", sql_output="pandas")
 
 @app.cell
 def _():
+    print("Welcome to my notebook!")
+    return
+
+
+@app.cell
+def _():
     import marimo as mo
 
     return (mo,)
+
+
+@app.cell
+def _():
+    1 + 3
+    return
+
+
+@app.cell
+def _():
+    print('hello world')
+    return
 
 
 @app.cell(hide_code=True)
@@ -95,9 +113,20 @@ def _(mo):
 
 @app.cell
 def _():
-    freight_charges = [16.75, 22.25, 25.00, 20.25, 36.25]
-    freight_charges
+    freight_charges = [999.99, 22.25, 25.00, 20.25, 36.25]
     return (freight_charges,)
+
+
+@app.cell
+def _(freight_charges):
+    print(freight_charges)
+    return
+
+
+@app.cell
+def _(freight_charges):
+    freight_charges
+    return
 
 
 @app.cell(hide_code=True)
@@ -118,6 +147,24 @@ def _(mo):
     *The number in brackets is an **index**, and Python counts from zero, so
     `freight_charges[0]` is the first one.*
     """)
+    return
+
+
+@app.cell
+def _(freight_charges):
+    freight_charges[0]
+    return
+
+
+@app.cell
+def _(freight_charges):
+    len(freight_charges)
+    return
+
+
+@app.cell
+def _(freight_charges):
+    total = sum(freight_charges)
     return
 
 
@@ -203,6 +250,67 @@ def _(mo):
     6. `orders * 2`, then `orders + freight_charges`. Neither one is an error.
     7. `sorted(freight_charges)`, then `sorted(freight_charges, reverse=True)`. What did `reverse=True` change, and did `freight_charges` itself change?
     """)
+    return
+
+
+@app.cell
+def _(freight_charges):
+    sorted(freight_charges)
+    return
+
+
+@app.cell
+def _(freight_charges):
+    sorted(freight_charges, reverse=True)
+    return
+
+
+@app.cell
+def _(freight_charges):
+    freight_charges[-1]
+    return
+
+
+@app.cell
+def _(freight_charges):
+    freight_charges[:3]
+    return
+
+
+@app.cell
+def _(orders):
+    orders[0]
+    return
+
+
+@app.cell
+def _(freight_charges):
+    freight_charges[0]
+    return
+
+
+@app.cell
+def _():
+    category = "Confections"
+    len(category)
+    return
+
+
+@app.cell
+def _(orders):
+    sum(orders)
+    return
+
+
+@app.cell
+def _(orders):
+    orders * 2
+    return
+
+
+@app.cell
+def _(freight_charges, orders):
+    orders + freight_charges
     return
 
 
